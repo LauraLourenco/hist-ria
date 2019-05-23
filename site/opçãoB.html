@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="historia.css">
+    <title>Jogo teste</title>
+    <style>
+        .op{
+            display: none;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="florestaimg">
+            <p>JOGO</p>
+            
+        <h1>Opção B</h1>
+
+        <h2>No bosque assombrado escolhes o caminho da esquerda, atravessas o rio, ou escolhes o caminho da direita?</h2>
+        <div class="middle">
+        <a class="btn btn1" id="esquerda" onclick="op_a(this.id)">caminho da esquerda</a>
+        <a class="btn btn1" id="rio" onclick="op_a(this.id)">atravessar o rio</a>
+        <a class="btn btn1" id="direita" onclick="op_a(this.id)">caminho da direita</a>
+</div>
+        <h3>Depois do caminho que escolheste...</h3>
+
+        <p id="esquerdaa" class="op op_esquerdaa">Conseguiste! Escolheste o caminho da esquerda.
+        <a href="opçãoC.html" class="continuar btn btn1">Continuar</a>
+    </p>
+        <p id="rioo" class="op op_rioo">Escolheste ir pelo rio, um crocodilo viu te e devorou-te.</p>
+        
+    
+        <p id="direitaa" class="op op_direitaa">Conseguiste! Escolheste o caminho da direita.
+            <a href="opçãoC.html" class="continuar btn btn1">Continuar</a>
+        </p>
+</div>
+<script>
+    function op_a (opcao){
+            if(opcao == 'esquerda') {
+                var texto = document.querySelector('#esquerdaa');
+                document.getElementById("rioo").disabled = true;
+                document.getElementById("direitaa").disabled = true;
+                texto.classList.remove("op");
+            }else if (opcao == 'rio') {
+                var texto = document.querySelector('#rioo');
+                document.getElementById("esquerdaa").disabled = true;
+                document.getElementById("direitaa").disabled = true;
+                texto.classList.remove("op");
+            }else {
+                var texto = document.querySelector('#direitaa');
+                document.getElementById("esquerdaa").disabled = true;
+                document.getElementById("rioo").disabled = true;
+                texto.classList.remove("op");
+            }
+
+        }
+                        
+</script>
+</body>
+</html>

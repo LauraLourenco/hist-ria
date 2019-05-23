@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="historia.css">
+    <title>Jogo teste</title>
+    <style>
+        .op{
+            display: none;
+
+        }
+    </style>
+</head>
+<body>
+       <div id="florestaimg">
+        <p>JOGO</p>
+
+        <h1>Opção E</h1>
+
+        <h2>Vais tentar sair da floresta! Tens dois caminhos o da esquerda ou o da direita?</h2>
+        <div class="middle">
+        <a class="btn btn1" id="esquerda" onclick="op_a(this.id)">esquerda</a>
+        <a class="btn btn1" id="direita" onclick="op_a(this.id)">direita</a>
+        </div>
+        <h3>A tentar sair da floresta...</h3>
+
+        <p id="esquerdas" class="op op_esquerdas">Escolheste ir para a esquerda, neste caminho há demasiadas árvores e está demasiado escuro, ficaste a andar em circulos e a comida acabou! Não conseguiste sair da floresta!</p> 
+            
+    
+    <p id="direitaa" class="op op_direitaa">Escolheste ir pela direita, este caminho é seguro, claro e simples! Conseguiste sair da floresta antes que a comida acabasse! Pediste boleia e conseguiste chegar a casa tranquilo!
+        <a href="Conseguiste.html" class="continuar btn btn1">Continuar</a>
+    </p>
+</div>
+<script>
+    function op_a (opcao){
+            if(opcao == 'esquerda') {
+                var texto = document.querySelector('#esquerdas');
+                document.getElementById("direitaa").disabled = true;
+                texto.classList.remove("op");
+            }else if (opcao == 'direita') {
+                var texto = document.querySelector('#direitaa');
+                document.getElementById("esquerdas").disabled = true;
+                texto.classList.remove("op");
+            }
+
+        }
+                        
+</script>
+</body>
+</html>

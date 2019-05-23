@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="historia.css">
+    <title>Jogo teste</title>
+    <style>
+        .op{
+            display: none;
+
+        }
+    </style>
+</head>
+<body>
+       <div id="florestaimg">
+        <p>JOGO</p>
+
+        <h1>Opção D</h1>
+
+        <h2>Estás na floresta neste momento, mas está muito frio e podem haver animais que são perigosos! Vais apanhar madeira para fazeres uma fogueira? Ou preferes não fazer nada e só ires tentar dormir?</h2>
+
+        <div class="middle">
+        <a class="btn btn1" id="apanhar" onclick="op_a(this.id)">Apanhar madeira</a>
+        <a class="btn btn1" id="dormir" onclick="op_a(this.id)">Ir dormir</a>
+        </div>
+        <h3>Na floresta...</h3>
+
+        <p id="apanhares" class="op op_apanhares">Escolheste ir apanhar madeira e fizeste uma fogueira! Conseguiste te protejer dos animais e do frio! 
+            <a href="opcaoE.html" class="continuar btn btn1">Continuar</a>
+    </p>
+        <p id="dormires" class="op op_dormires">Escolheste não fazer nada e ires tentar dormir! Um urso apareceu e devorou te!</p>
+       
+    </div>
+
+<script>
+    function op_a (opcao){
+            if(opcao == 'apanhar') {
+                var texto = document.querySelector('#apanhares');
+                document.getElementById("dormires").disabled = true;
+                texto.classList.remove("op");
+            }else if (opcao == 'dormir') {
+                var texto = document.querySelector('#dormires');
+                document.getElementById("apanhares").disabled = true;
+                texto.classList.remove("op");
+            }
+
+        }
+                        
+</script>
+</body>
+</html>
